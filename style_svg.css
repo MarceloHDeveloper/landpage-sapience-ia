@@ -1,0 +1,17 @@
+
+section#svg-container-1 {
+    width: 100vw;
+    height: 100vh;
+    border: 2px solid rgb(0, 255, 13);
+    position: relative;
+}
+
+section#svg-container-1  svg{
+    position: absolute;
+    right: -50px;
+    top: -50px;
+    width: auto;
+    height: 100%;
+
+    
+}
