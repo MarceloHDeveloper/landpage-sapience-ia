@@ -1,0 +1,619 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Regular.ttf') format('truetype');
+}
+
+:root {
+  --primary-color: #2df9b7;
+  --secondary-color: #03162b;
+  --background-gradient: linear-gradient(65deg, hsl(237, 95%, 8%) 23%, #130031 63%, #012544 100%);
+  --text-color: #333;
+  --white: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+/* Header Styles */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 2em;
+  background: var(--secondary-color);
+  color: var(--white);
+  transition: background-color 0.3s ease;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5em; /* Increased gap */
+  flex-shrink: 0; /* Prevent logo from shrinking */
+  width: auto; /* Allow logo to take necessary width */
+  max-width: 300px; /* Adjust this value as needed */
+  background-image: url('../../assets/svg/logo_text.svg');
+}
+
+.logo svg {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.logo-text {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--primary-color);
+  white-space: nowrap;
+}
+
+/* Navigation Styles */
+.menu {
+  flex-grow: 1; /* Allow menu to take remaining space */
+  display: flex;
+  justify-content: flex-end;
+}
+
+.menu ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu ul li {
+  margin-left: 20px; /* Add space between menu items */
+}
+
+.menu ul li a {
+  color: var(--white);
+  text-decoration: none;
+}
+
+
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger span {
+  background: var(--white);
+  height: 3px;
+  margin: 5px;
+  width: 25px;
+}
+
+/* Hero Section Styles */
+.hero {
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  position: relative;
+  color: var(--white);
+  background: var(--background-gradient);
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 70%);
+  filter: blur(20px);
+}
+
+.hero h2 { font-size: 7rem; }
+.hero h3 { font-size: 3.5rem; font-weight: lighter; }
+
+.text-animation {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 3.4rem;
+  color: rgb(20, 255, 126);
+}
+
+.hero-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  opacity: 0;
+  width: 21rem;
+  transform: translate(-50%, -50%);
+}
+
+.brain-logo-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.brain-logo-container::before {
+    content: '';
+    position: absolute;
+    width: 2px;  /* Thin vertical line */
+    height: 80%;  /* Adjust as needed */
+    background: white;
+    filter: blur(5px);
+    z-index: -1;
+}
+
+.brain-logo-container::after {
+    content: '';
+    position: absolute;
+    width: 80%;  /* Adjust as needed */
+    height: 2px;  /* Thin horizontal line */
+    background: white;
+    filter: blur(5px);
+    z-index: -1;
+}
+
+.brain-logo-container svg {
+    width: calc(100%+20px);
+    height: auto;
+    position: relative;
+    z-index: 1;
+}
+
+.glow-effect {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 12%;  /* Cover the full width of the container */
+    height: 180%;  /* Cover the full height of the container */
+    background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
+    filter: blur(12px);
+    z-index: 0;
+    opacity: 0.9;
+    pointer-events: none;  /* Ensure it doesn't interfere with interactions */
+    animation: glowAnimation 4s infinite ease-in-out;
+}
+
+.brain-logo-container svg path {
+    fill: url(#gradient);
+}
+
+.logo-text-hero {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3em;
+    font-weight: 600;
+    background: linear-gradient(45deg, #1bffb7, #045279);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    margin-top: 20px;
+    text-shadow: 0 0 1px rgb(255, 255, 255),
+                 0 0 5px rgba(25, 110, 160, 0.5),
+                 0 0 7px rgba(4, 184, 216, 0.938);
+}
+
+
+
+
+.slogan{
+  font-size: 1.5rem;
+  color: #b7fcf8;
+}
+
+/* Initial button style */
+.know-more-btn-shadow{
+  content: "";
+  position: absolute;
+  width:200px;
+  height: min-height(300px);
+  bottom: -30%;
+  left: 50%;
+  padding: 0.8em;
+  background-color: rgba(0, 226, 113, 0.6);
+  border-radius: 25px;
+  transform: translate(-50%, -50%);
+  filter: blur(2px);
+  z-index: 2;
+  animation: expandShadow 2s infinite ease-in-out;
+ 
+}
+.know-more-btn{
+  content: "";
+  position: absolute;
+  width:200px;
+  font-size: 1rem;
+  height: min-height(100px);
+  bottom: -30%;
+  left: 50%;
+  padding: 0.8em;
+  border: 1px solid rgb(104, 255, 217) ;
+  border-radius: 25px;
+  transform: translate(-50%, -50%) ;
+  transition: all ease-in 600ms;
+  cursor: pointer;
+  z-index: 2;
+
+
+ 
+}
+
+.know-more-btn:hover {
+  
+  background-color: #17c07f9f;
+}
+
+
+#svg-container-1  {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: #ffff;
+}
+/* Green shadow animation */
+
+
+/* Animation effect */
+@keyframes expandShadow {
+  0% {
+      transform: translate(-50%, -50%) scale(0.9);
+      opacity: 0.6;
+      filter: blur(2px);
+  }
+  50% {
+      transform: translate(-50%, -50%) scale(1.3);
+      opacity: 0.3;
+      filter: blur(5px);
+  }
+  100% {
+      transform: translate(-50%, -50%) scale(1.6);
+      opacity: 0;
+      filter: blur(10px);
+  }
+}
+
+
+
+#cards-services {
+    display: grid;
+    grid-template-rows: auto 1fr; /* Define duas linhas, uma para o título e outra para os cards */
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas padrão */
+    gap: 20px;
+    padding: 20px;
+    padding-top: 80px; /* Adjust based on your header height */
+}
+
+/* Ajuste o título para ocupar a primeira linha */
+.section-title {
+    grid-row: 1 / 4; /* Coloca o título na primeira linha */
+    text-align: start;
+    padding: 2em 2em ;
+    font-size: 2rem;
+    width: 80%;
+    height: 200px;
+    font-weight: bold;
+    color:  #03162b;
+    margin-bottom: 20px;
+    grid-column: 1 / -1; /* Faz com que o título ocupe toda a largura da grid */
+}
+
+  .card-service {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 300px; /* Define uma largura máxima para os cards */
+    width: 100%; 
+  }
+  
+  .card-service i {
+    font-size: 60px;
+    color: #3AAFA9;
+    margin-bottom: 10px;
+  
+  }
+  
+  .card-service h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+  
+  .card-service p {
+    font-size: 1em;
+    margin-bottom: 20px;
+    color: #555;
+  }
+  
+  .card-service button {
+    background-color: #3AAFA9;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .card-service button:hover {
+    background-color: #2B7C77;
+  }
+  
+  /* Card hover effect */
+  .card-service:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  /* gale*/
+  .team-section {
+    background-color: #f4f4f4;
+    padding: 50px 0;
+  }
+  
+  .team-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .team-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .team-card img {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+  }
+  
+  .team-card h2 {
+    font-size: 20px;
+    margin: 10px 0;
+  }
+  
+  .team-card p {
+    font-size: 16px;
+    color: #666;
+  }
+  
+  .team-card:hover {
+    transform: translateY(-10px);
+  }
+
+  .presentation{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+   
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+
+  p{
+    width: 90%;
+    padding: 0.7em 2em;
+    text-align: justify;
+  }
+  p span {
+    color: #15a03f;
+    font-weight: bolder;
+  }
+  /* Animation */
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+
+/* Estilos para telas maiores */
+@media (min-width: 768px) {
+    .menu ul {
+        display: flex;
+    }
+
+    .menu ul li {
+        margin: 0 10px;
+    }
+
+    .hamburger {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    .hero-cta {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 900px) {
+    #cards-services {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas para telas médias */
+    }
+}
+
+@media (max-width: 600px) {
+    #cards-services {
+        grid-template-columns: 1fr; /* 1 coluna para telas pequenas */
+    }
+}
+
+.logo-detail{
+    color: #0056b3;
+}
+
+.logo-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 600; /* This makes it semibold */
+    color: #2df9b7;
+    margin-top: 10px;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 30px 10px rgba(45, 249, 183, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 40px 20px rgba(45, 249, 183, 0.7);
+    }
+    100% {
+        box-shadow: 0 0 30px 10px rgba(45, 249, 183, 0.5);
+    }
+}
+
+.full-screen-light {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 9998;
+    transition: all 0.5s ease-in-out;
+}
+
+.full-screen-light.active {
+    opacity: 1;
+}
+
+.header-light {
+    background-color: white;
+    color: black; /* Adjust text color as needed */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optional: adds a subtle shadow */
+}
+
+.header-light .logo-text {
+    color: black; /* Adjust as needed */
+}
+
+.header-light .menu ul li a {
+    color: black; /* Adjust as needed */
+}
+
+.full-screen-light {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 9998; /* Ensure this is below the header */
+    transition: all 0.5s ease-in-out;
+}
+
+@keyframes glowPulse {
+  0% { filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.7)); }
+  50% { filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.9)); }
+  100% { filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.7)); }
+}
+
+@keyframes logoGlow {
+  0% { filter: brightness(1) drop-shadow(0 0 3px rgba(255, 255, 255, 0.7)); }
+  50% { filter: brightness(1.2) drop-shadow(0 0 15px rgba(255, 255, 255, 0.9)); }
+  100% { filter: brightness(1) drop-shadow(0 0 3px rgba(255, 255, 255, 0.7)); }
+}
+
+.glow-effect {
+  animation: glowPulse 3s infinite ease-in-out;
+}
+
+.hero-logo svg {
+  animation: logoGlow 4s infinite ease-in-out;
+}
+
+/* Existing animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  header {
+    flex-wrap: wrap;
+  }
+
+  .logo {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 1em;
+  }
+
+  .menu {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .menu ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menu ul li {
+    margin: 10px 0;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+.lottie-animation-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    display: none; /* Initially hidden */
+}
+
+#lottie-animation {
+    width: 100%;
+    height: 100%;
+}
