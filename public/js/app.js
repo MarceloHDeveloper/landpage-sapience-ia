@@ -38,11 +38,9 @@ function initializeApp() {
   img.src = '../../assets/images/image1.png';
   document.body.appendChild(img);
 }
-
 function toggleMenu() {
   elements.menu.classList.toggle('show');
 }
-
 function handleKnowMoreClick() {
     console.log('Know More button clicked');
     if (isTransitioning) {
@@ -50,22 +48,25 @@ function handleKnowMoreClick() {
         return;
     }
     isTransitioning = true;
-
-    // Play Lottie Animation
-    if (window.LottieAnimations && typeof window.LottieAnimations.play === 'function') {
-        console.log('Playing Lottie Animation');
-        window.LottieAnimations.play();
-    } else {
-        console.error('LottieAnimations.play is not available');
-    }
-
-    // Start the light effect transition after the Lottie animation
+    
+    console.log('Triggering createFullScreenLightEffect');
+    createFullScreenLightEffect(elements);
+    
     console.log('Scheduling light effect transition');
     setTimeout(() => {
-        console.log('Triggering createFullScreenLightEffect');
-        isTransitioning = false; // Reset isTransitioning before calling createFullScreenLightEffect
-        createFullScreenLightEffect(elements);
-    }, 2000); // Adjust this delay based on your Lottie animation duration
+        if (window.LottieAnimations && typeof window.LottieAnimations.play === 'function') {
+            console.log('Playing Lottie Animation');
+            const animationDuration = 3000; // Set your desired duration in milliseconds
+            window.LottieAnimations.play(animationDuration, function() {
+                console.log('Lottie animation completed (callback from app.js)');
+                isTransitioning = false;
+                // Any other actions you want to perform after the animation
+            });
+        } else {
+            console.error('LottieAnimations.play is not available');
+            isTransitioning = false;
+        }
+    }, 2000); // Adjust this delay based on your light effect duration
 }
 
 function startTypewriterEffect() {
