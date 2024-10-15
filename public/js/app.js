@@ -54,16 +54,28 @@ function handleKnowMoreClick() {
     
     console.log('Scheduling light effect transition');
     setTimeout(() => {
-        if (window.LottieAnimations && typeof window.LottieAnimations.play === 'function') {
-            console.log('Playing Lottie Animation');
-            const animationDuration = 3000; // Set your desired duration in milliseconds
-            window.LottieAnimations.play(animationDuration, function() {
-                console.log('Lottie animation completed (callback from app.js)');
-                isTransitioning = false;
-                // Any other actions you want to perform after the animation
+        if (window.LottieAnimations && typeof window.LottieAnimations.playAnimation1 === 'function') {
+            console.log('Playing Lottie Animation 1');
+            const animation1Duration = 3000; // Set your desired duration in milliseconds
+            window.LottieAnimations.playAnimation1(animation1Duration, function() {
+                console.log('Lottie animation 1 completed');
+                
+                // Play animation 2 immediately after animation 1 ends
+                if (typeof window.LottieAnimations.playAnimation2 === 'function') {
+                    console.log('Playing Lottie Animation 2');
+                    const animation2Duration = 3000; // Set your desired duration for animation 2
+                    window.LottieAnimations.playAnimation2(animation2Duration, function() {
+                        console.log('Lottie animation 2 completed');
+                        isTransitioning = false;
+                        // Any other actions you want to perform after both animations
+                    });
+                } else {
+                    console.error('LottieAnimations.playAnimation2 is not available');
+                    isTransitioning = false;
+                }
             });
         } else {
-            console.error('LottieAnimations.play is not available');
+            console.error('LottieAnimations.playAnimation1 is not available');
             isTransitioning = false;
         }
     }, 2000); // Adjust this delay based on your light effect duration
@@ -151,7 +163,7 @@ function showLogo() {
 
 function fadeOutEffect(domRef, duration = 1000, callback) {
     let opacity = 1;
-    const intervalTime = 50;
+    const intervalTime = 10;
     const opacityDecrease = intervalTime / duration;
 
     function fade() {

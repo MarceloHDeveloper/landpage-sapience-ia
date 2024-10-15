@@ -29,8 +29,8 @@ export function createFullScreenLightEffect(elements) {
     elements.svgSection.style.position = 'fixed';
     elements.svgSection.style.top = '0';
     elements.svgSection.style.left = '0';
-    elements.svgSection.style.width = '100%';
-    elements.svgSection.style.height = '100%';
+    elements.svgSection.style.width = '100vw';
+    elements.svgSection.style.height = '100vh';
     elements.svgSection.style.zIndex = '9997';
     elements.svgSection.style.opacity = '0';
     elements.svgSection.style.display = 'block';
@@ -56,16 +56,15 @@ export function createFullScreenLightEffect(elements) {
 
     const glowRect = glowEffect.getBoundingClientRect();
 
-    fullScreenLight.style.transition = 'none';
+    fullScreenLight.style.position = 'fixed';
     fullScreenLight.style.width = `${glowRect.width}px`;
     fullScreenLight.style.height = `${glowRect.height}px`;
     fullScreenLight.style.top = `${glowRect.top}px`;
     fullScreenLight.style.left = `${glowRect.left}px`;
     fullScreenLight.style.borderRadius = '50%';
-    fullScreenLight.style.position = 'fixed';
     fullScreenLight.style.backgroundColor = 'white';
     fullScreenLight.style.opacity = '1';
-    fullScreenLight.style.zIndex = '9998'; // Ensure this is below the header
+    fullScreenLight.style.zIndex = '9998'; // Ensure this is below the presentation section
     fullScreenLight.style.display = 'block';
 
     // Force a reflow
@@ -82,9 +81,30 @@ export function createFullScreenLightEffect(elements) {
 
         setTimeout(() => {
             console.log('Light effect expansion complete');
+            showPresentationSection();
             transitionToNextSection();
         }, 500);
     }, 50);
+}
+
+function showPresentationSection() {
+    const presentationSection = document.querySelector('.presentation');
+    if (presentationSection) {
+        presentationSection.style.position = 'fixed';
+        presentationSection.style.top = '0';
+        presentationSection.style.left = '0';
+        presentationSection.style.width = '100vw';
+        presentationSection.style.height = '100vh';
+        presentationSection.style.zIndex = '9999'; // Higher than the full-screen light
+        presentationSection.style.opacity = '1';
+        presentationSection.style.display = 'flex';
+        
+        // Fade in the presentation section
+        setTimeout(() => {
+            presentationSection.style.transition = 'opacity 0.5s ease-in-out';
+            presentationSection.style.opacity = '1';
+        }, 50);
+    }
 }
 
 export function transitionToNextSection() {
@@ -107,7 +127,7 @@ export function revertFullScreenLightEffect(elements) {
     const glowRect = glowEffect.getBoundingClientRect();
 
     if (fullScreenLight) {
-        fullScreenLight.style.transition = 'all 0.5s ease-in-out';
+        fullScreenLight.style.transition = 'all 1s ease-in-out';
         fullScreenLight.style.width = glowRect.width + 'px';
         fullScreenLight.style.height = glowRect.height + 'px';
         fullScreenLight.style.top = glowRect.top + 'px';
