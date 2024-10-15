@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kinetic Text Effects Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .effect-demo {
+            margin-bottom: 30px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .effect-text {
+            font-size: 24px;
+            margin-bottom: 10px;
+            min-height: 50px;
+        }
+        button {
+            padding: 5px 10px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Kinetic Text Effects Test</h1>
+        
+        <div class="effect-demo">
+            <h3>Text Wave Effect</h3>
+            <div class="effect-text" id="waveEffect">Wave Me!</div>
+            <button onclick="applyEffect('waveEffect', 'textWave', { amplitude: '15px', frequency: '1.5' })">Apply</button>
+            <button onclick="removeEffect('waveEffect')">Remove</button>
+        </div>
+
+        <div class="effect-demo">
+            <h3>3D Extrude Effect</h3>
+            <div class="effect-text" id="extrudeEffect">Extrude Me!</div>
+            <button onclick="applyEffect('extrudeEffect', 'text3DExtrude', { depth: '8px' })">Apply</button>
+            <button onclick="removeEffect('extrudeEffect')">Remove</button>
+        </div>
+
+        <div class="effect-demo">
+            <h3>Color Shift Effect</h3>
+            <div class="effect-text" id="colorShiftEffect">Shift My Colors!</div>
+            <button onclick="applyEffect('colorShiftEffect', 'textColorShift', { colors: ['#ff0000', '#00ff00', '#0000ff'] })">Apply</button>
+            <button onclick="removeEffect('colorShiftEffect')">Remove</button>
+        </div>
+
+        <div class="effect-demo">
+            <h3>Typewriter Effect</h3>
+            <div class="effect-text" id="typewriterEffect">Type me out slowly...</div>
+            <button onclick="applyEffect('typewriterEffect', 'textTypewriter', { steps: 30 })">Apply</button>
+            <button onclick="removeEffect('typewriterEffect')">Remove</button>
+        </div>
+
+        <div class="effect-demo">
+            <h3>Gradient Shift Effect</h3>
+            <div class="effect-text" id="gradientEffect">Gradient Shifting Text</div>
+            <button onclick="applyEffect('gradientEffect', 'gradientShift', { color1: '#ff00ff', color2: '#00ffff' })">Apply</button>
+            <button onclick="removeEffect('gradientEffect')">Remove</button>
+        </div>
+
+        <div class="effect-demo">
+            <h3>Split Text Reveal Effect</h3>
+            <div class="effect-text" id="splitTextEffect">Reveal Each Letter</div>
+            <button onclick="applyEffect('splitTextEffect', 'splitTextReveal')">Apply</button>
+            <button onclick="resetSplitText('splitTextEffect')">Reset</button>
+        </div>
+    </div>
+
+    <script type="module">
+        import KineticTextEffects from './js/kinetic-text-effects.js';
+
+        window.applyEffect = function(elementId, effectName, params = {}) {
+            const element = document.getElementById(elementId);
+            KineticTextEffects[effectName](element, params);
+        }
+
+        window.removeEffect = function(elementId) {
+            const element = document.getElementById(elementId);
+            KineticTextEffects.removeEffect(element);
+        }
+
+        window.resetSplitText = function(elementId) {
+            const element = document.getElementById(elementId);
+            element.innerHTML = element.textContent; // Reset to original text
+            removeEffect(elementId);
+        }
+    </script>
+</body>
+</html>

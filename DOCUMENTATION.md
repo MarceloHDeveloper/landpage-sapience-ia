@@ -45,6 +45,15 @@ Landpage-sapience-ia is a dynamic, single-page website showcasing Sapiencia's AI
 - **Presentation Section**: New section appearing above the Hero Section after the Light Effect Transition.
 - **Lottie Animation**: Animated SVG playing in the Presentation Section post-transition.
 - **Particle Effect**: Interactive background animation created using Particles.js.
+- **KineticType Core**: Custom JavaScript library for creating kinetic typography effects.
+- **Text Animation Effect**: Any of the various text animations provided by KineticType Core (e.g., textWave, textFadeInOut, textSlideIn).
+- **Effect Application**: Process of applying a text animation effect to a DOM element.
+- **Effect Removal**: Process of removing an applied text animation effect from a DOM element.
+- **Animation Parameters**: Customizable options for each text animation effect (e.g., amplitude, frequency, colors).
+- **Phrase Transition**: Smooth transition between different text phrases using KineticType Core's addPhrase and removePhrase functions.
+- **Split Text Reveal**: Special effect that reveals text character by character.
+- **Gradient Shift**: Text effect that applies a moving gradient to the text color.
+- **3D Text Effects**: Group of effects that give text a three-dimensional appearance (e.g., text3DExtrude, rotate3D).
 
 ## Page Flow
 
@@ -182,3 +191,91 @@ Controls particle background animation.
 - Host on static file server (e.g., Netlify, GitHub Pages)
 - Ensure proper asset linking with relative paths
 - Set appropriate cache headers for static assets
+
+## License
+
+Copyright © 2024 Sapience-IA. All rights reserved.
+
+This project, including all source code, documentation, and assets, is the intellectual property of Sapience-IA. The Sapiencia landpage and KineticType Core library are proprietary software.
+
+Unauthorized use, reproduction, or distribution of this software or any portion of it may result in severe civil and criminal penalties, and will be prosecuted to the maximum extent possible under the law.
+
+For inquiries about licensing or usage, please contact Sapience-IA at [contact email or website].
+
+## KineticType Core
+
+KineticType Core is our proprietary JavaScript library for creating kinetic typography effects. It was specifically created for use in the Sapience-IA landpage project. This custom-built solution ensures that the text animations perfectly align with the unique design and interactive requirements of our website.
+
+### Overview
+
+KineticType Core was developed in-house to meet the specific needs of the Sapience-IA landpage. It offers a wide range of text animation effects that are tailored to our brand identity and user experience goals. The library is designed to be flexible, performant, and seamlessly integrated with other components of our landpage.
+
+### Key Features
+
+- 28+ predefined text animation effects, custom-designed for Sapience-IA's visual language
+- Customizable animation parameters to fine-tune effects for different sections of the landpage
+- Easy-to-use API for applying and removing effects, optimized for our development workflow
+- Smooth transition handling between text phrases, crucial for our interactive storytelling approach
+- Performance-optimized for smooth animations, ensuring a responsive user experience on our landpage
+
+### Integration with Sapience-IA Landpage
+
+KineticType Core is deeply integrated into the Sapience-IA landpage, providing dynamic text animations that enhance our brand message. It's used throughout the site, including:
+
+1. The hero section for impactful headline animations that capture visitor attention
+2. The presentation section for revealing key points about our AI and technology services
+3. Various sections where text needs to be emphasized or animated to illustrate complex concepts
+
+## Glossary of Technical Terms
+
+- **API (Application Programming Interface)**: A set of routines, protocols, and tools for building software applications.
+
+- **CSS (Cascading Style Sheets)**: A language used to describe the presentation of a document written in HTML or XML.
+
+- **DOM (Document Object Model)**: A programming interface for HTML and XML documents, representing the structure of a document as a tree of objects.
+
+- **ES6+ (ECMAScript 2015+)**: More recent versions of the ECMAScript standard, which is the standardized specification of JavaScript.
+
+- **Git**: A distributed version control system for tracking changes in source code during software development.
+
+- **HTML (HyperText Markup Language)**: The standard markup language for creating web pages.
+
+- **JavaScript**: A high-level, interpreted programming language that enables interactive web pages.
+
+- **JSON (JavaScript Object Notation)**: A lightweight data interchange format that is easy for humans to read and write and for machines to parse and generate.
+
+- **Landing Page**: A single web page designed specifically for a marketing or advertising campaign.
+
+- **Lottie**: A library that renders Adobe After Effects animations exported as json with Bodymovin.
+
+- **Particles.js**: A lightweight JavaScript library for creating animated particles.
+
+- **Responsive**: Design that adapts to different screen sizes and devices.
+
+- **SVG (Scalable Vector Graphics)**: An XML-based vector image format for two-dimensional graphics with support for interactivity and animation.
+
+- **Three.js**: A cross-browser JavaScript library/API used to create and display animated 3D computer graphics in a web browser.
+
+- **Kinetic Typography**: An animation technique mixing motion and text to express ideas.
+
+- **Vector**: A type of graphic based on mathematical formulas that can be scaled without loss of quality.
+
+- **Webpack**: An open-source JavaScript module bundler, primarily used to bundle JavaScript files for usage in a browser.
+
+- **Keyframe-based animation**: An animation technique where the animator defines key frames at specific points on a timeline and the software interpolates the intermediate frames.
+
+- **Rendering**: The process of generating an image from a 2D or 3D model by means of computer programs.
+
+- **Lazy-loading**: An optimization technique where the loading of non-critical content is deferred until it's needed.
+
+- **ARIA (Accessible Rich Internet Applications)**: A set of attributes that define ways to make Web content and Web applications more accessible to people with disabilities.
+
+- **Polyfill**: Code that implements a feature on web browsers that do not support it natively.
+
+- **Minification**: The process of removing all unnecessary characters from source code without changing its functionality.
+
+- **CDN (Content Delivery Network)**: A system of distributed servers that deliver web pages and other web content to users based on their geographic location.
+
+- **KineticType Core**: Our proprietary JavaScript library for creating kinetic typography effects, specifically developed for the Sapience-IA landing page.
+
+- **Ubiquitous Language**: A common, rigorous language between developers and users, used throughout the project from requirements to code.

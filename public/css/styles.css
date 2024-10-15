@@ -430,22 +430,7 @@ header {
     overflow: auto; /* In case content is larger than the viewport */
 }
 
-#text-animation-container {
-   position: absolute;
-    left: 5em;
-    width: 50%;
-    
-    height: auto;
-  
-}
 
-.presentation-text-content {
-    font-size: 4.5rem;
-    width: 100%;
-    line-height: 1.2;
-    color: #333;
-    text-align: left;
-}
 
 
 #lottie-animation,

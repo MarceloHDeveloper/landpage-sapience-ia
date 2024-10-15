@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kinetic Typography Demo</title>
+    <link rel="stylesheet" href="css/kinetic-text-animation.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .demo-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .category {
+            margin-bottom: 30px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .demo-text-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .demo-text {
+            flex-grow: 1;
+            font-size: 24px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        .trigger-button {
+            padding: 5px 10px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+        .trigger-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-container">
+        <h1>Kinetic Typography Demo</h1>
+        
+        <div class="category">
+            <h2>Basic Effects</h2>
+            <div class="demo-text-container">
+                <div class="demo-text" data-effect="textFadeInOut">Fade In/Out</div>
+                <button class="trigger-button" onclick="triggerEffect(this)">Trigger</button>
+            </div>
+            <div class="demo-text-container">
+                <div class="demo-text" data-effect="textSlideIn">Slide In</div>
+                <button class="trigger-button" onclick="triggerEffect(this)">Trigger</button>
+            </div>
+            <div class="demo-text-container">
+                <div class="demo-text" data-effect="textZoom">Zoom</div>
+                <button class="trigger-button" onclick="triggerEffect(this)">Trigger</button>
+            </div>
+            <div class="demo-text-container">
+                <div class="demo-text" data-effect="textRotate">Rotate</div>
+                <button class="trigger-button" onclick="triggerEffect(this)">Trigger</button>
+            </div>
+            <div class="demo-text-container">
+                <div class="demo-text" data-effect="textSkew">Skew</div>
+                <button class="trigger-button" onclick="triggerEffect(this)">Trigger</button>
+            </div>
+            <div class="demo-text-container">
+                <div class="demo-text" data-effect="textBounce">Bounce</div>
+                <button class="trigger-button" onclick="triggerEffect(this)">Trigger</button>
+            </div>
+            <div class="demo-text-container">
+                <div class="demo-text" data-effect="textWave">Wave</div>
+                <button class="trigger-button" onclick="triggerEffect(this)">Trigger</button>
+            </div>
+            <div class="demo-text-container">
+                <div class="demo-text" data-effect="textColorShift">Color Shift</div>
+                <button class="trigger-button" onclick="triggerEffect(this)">Trigger</button>
+            </div>
+            <div class="demo-text-container">
+                <div class="demo-text" data-effect="textOpacityFlicker">Opacity Flicker</div>
+                <button class="trigger-button" onclick="triggerEffect(this)">Trigger</button>
+            </div>
+            <div class="demo-text-container">
+                <div class="demo-text" data-effect="textBlurFocus">Blur Focus</div>
+                <button class="trigger-button" onclick="triggerEffect(this)">Trigger</button>
+            </div>
+            <div class="demo-text-container">
+                <div class="demo-text" data-effect="textTracking">Tracking</div>
+                <button class="trigger-button" onclick="triggerEffect(this)">Trigger</button>
+            </div>
+        </div>
+        
+        <div class="category">
+            <h2>Advanced Effects</h2>
+            <div class="demo-text-container">
+                <div class="demo-text" data-effect="textTypewriter">Typewriter</div>
+                <button class="trigger-button" onclick="triggerEffect(this)">Trigger</button>
+            </div>
+            <div class="demo-text-container">
+                <div class="demo-text" data-effect="text3DExtrude">3D Extrude</div>
+                <button class="trigger-button" onclick="triggerEffect(this)">Trigger</button>
+            </div>
+            <div class="demo-text-container">
+                <div class="demo-text" data-effect="textMorph">Morph</div>
+                <button class="trigger-button" onclick="triggerEffect(this)">Trigger</button>
+            </div>
+            <div class="demo-text-container">
+                <div class="demo-text" data-effect="textGlitch">Glitch</div>
+                <button class="trigger-button" onclick="triggerEffect(this)">Trigger</button>
+            </div>
+            <div class="demo-text-container">
+                <div class="demo-text" data-effect="textPath">Path</div>
+                <button class="trigger-button" onclick="triggerEffect(this)">Trigger</button>
+            </div>
+            <div class="demo-text-container">
+                <div class="demo-text" data-effect="textLiquid">Liquid</div>
+                <button class="trigger-button" onclick="triggerEffect(this)">Trigger</button>
+            </div>
+            <div class="demo-text-container">
+                <div class="demo-text" data-effect="textExplode">Explode</div>
+                <button class="trigger-button" onclick="triggerEffect(this)">Trigger</button>
+            </div>
+            <div class="demo-text-container">
+                <div class="demo-text" data-effect="textMask">Mask</div>
+                <button class="trigger-button" onclick="triggerEffect(this)">Trigger</button>
+            </div>
+        </div>
+        
+        <div class="category">
+            <h2>3D and Perspective Effects</h2>
+            <div class="demo-text-container">
+                <div class="demo-text" data-effect="rotate3D">3D Rotate</div>
+                <button class="trigger-button" onclick="triggerEffect(this)">Trigger</button>
+            </div>
+            <div class="demo-text-container">
+                <div class="demo-text" data-effect="textParallax">Parallax</div>
+                <button class="trigger-button" onclick="triggerEffect(this)">Trigger</button>
+            </div>
+        </div>
+        
+        <div class="category">
+            <h2>Text Decoration Effects</h2>
+            <div class="demo-text-container">
+                <div class="demo-text" data-effect="shadowMove">Shadow Move</div>
+                <button class="trigger-button" onclick="triggerEffect(this)">Trigger</button>
+            </div>
+            <div class="demo-text-container">
+                <div class="demo-text" data-effect="textStroke">Text Stroke</div>
+                <button class="trigger-button" onclick="triggerEffect(this)">Trigger</button>
+            </div>
+            <div class="demo-text-container">
+                <div class="demo-text" data-effect="gradientShift">Gradient Shift</div>
+                <button class="trigger-button" onclick="triggerEffect(this)">Trigger</button>
+            </div>
+        </div>
+        
+        <div class="category">
+            <h2>Movement Effects</h2>
+            <div class="demo-text-container">
+                <div class="demo-text" data-effect="textScroll">Text Scroll</div>
+                <button class="trigger-button" onclick="triggerEffect(this)">Trigger</button>
+            </div>
+            <div class="demo-text-container">
+                <div class="demo-text" data-effect="fadeSlide">Fade Slide</div>
+                <button class="trigger-button" onclick="triggerEffect(this)">Trigger</button>
+            </div>
+        </div>
+        
+        <div class="category">
+            <h2>Special Effects</h2>
+            <div class="demo-text-container">
+                <div class="demo-text" data-effect="textReveal">Text Reveal</div>
+                <button class="trigger-button" onclick="triggerEffect(this)">Trigger</button>
+            </div>
+            <div class="demo-text-container">
+                <div class="demo-text" data-effect="textRipple">Text Ripple</div>
+                <button class="trigger-button" onclick="triggerEffect(this)">Trigger</button>
+            </div>
+            <div class="demo-text-container">
+                <div class="split-text" data-effect="splitTextReveal">
+                    <span>S</span><span>p</span><span>l</span><span>i</span><span>t</span>
+                    <span>T</span><span>e</span><span>x</span><span>t</span>
+                </div>
+                <button class="trigger-button" onclick="triggerSplitText(this)">Trigger</button>
+            </div>
+        </div>
+        
+        <div class="category">
+            <h2>Hover Effect</h2>
+            <div class="demo-text-container">
+                <div class="demo-text hover-scale">Hover to Scale (No trigger needed)</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function triggerEffect(button) {
+            const demoText = button.previousElementSibling;
+            const effect = demoText.dataset.effect;
+            
+            if (demoText.style.animation) {
+                demoText.style.animation = '';
+                button.textContent = 'Trigger';
+            } else {
+                demoText.style.animation = `${effect} 2s`;
+                button.textContent = 'Stop';
+                
+                // For effects that don't loop
+                if (['textSlideIn', 'textTypewriter', 'textExplode', 'textMask', 'fadeSlide', 'textReveal'].includes(effect)) {
+                    demoText.style.animation = `${effect} 2s forwards`;
+                }
+            }
+        }
+
+        function triggerSplitText(button) {
+            const splitText = button.previousElementSibling;
+            const spans = splitText.querySelectorAll('span');
+            
+            if (splitText.classList.contains('animated')) {
+                splitText.classList.remove('animated');
+                spans.forEach(span => span.style.animation = '');
+                button.textContent = 'Trigger';
+            } else {
+                splitText.classList.add('animated');
+                spans.forEach((span, index) => {
+                    span.style.animation = `splitTextReveal 0.5s forwards ${index * 0.1}s`;
+                });
+                button.textContent = 'Reset';
+            }
+        }
+    </script>
+</body>
+</html>

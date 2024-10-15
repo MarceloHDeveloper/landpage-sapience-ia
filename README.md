@@ -15,6 +15,7 @@ Sapiencia is a dynamic, single-page website showcasing our AI and technology ser
 - Particles.js (v2.0.0)
 - SVG.js (v3.0)
 - Font Awesome (v5.15.4)
+- KineticType Core (custom library)
 
 ## Project Structure
 
@@ -23,6 +24,7 @@ Sapiencia is a dynamic, single-page website showcasing our AI and technology ser
 - Smooth transition effects
 - Lottie animations
 - Responsive design
+- Kinetic typography effects (powered by KineticType Core)
 
 ## Development
 Refer to [DOCUMENTATION.md](./DOCUMENTATION.md) for detailed development guidelines, including:
@@ -32,15 +34,28 @@ Refer to [DOCUMENTATION.md](./DOCUMENTATION.md) for detailed development guideli
 - Event sequences
 - Customization points
 
+## KineticType Core
+KineticType Core is our custom JavaScript library for creating kinetic typography effects. It provides a set of customizable text animation effects and utilities.
+
+### Key Features of KineticType Core
+- 28+ text animation effects
+- Customizable animation parameters
+- Easy-to-use API for applying and removing effects
+- Transition handling for smooth text changes
+
+For detailed documentation on KineticType Core, refer to [KineticType-Core-Documentation.md](./KineticType-Core-Documentation.md).
+
 ## Performance Considerations
 - Asynchronous loading of animations
 - Optimized particle effects
 - Lazy-loading of off-screen content
+- Efficient text animations with KineticType Core
 
 ## Accessibility
 - Keyboard accessible interactive elements
 - ARIA labels for dynamic content
 - High color contrast ratios
+- Considerations for animated text readability
 
 ## Browser Compatibility
 - Supports latest versions of Chrome, Firefox, Safari, and Edge
@@ -50,6 +65,5 @@ Refer to [DOCUMENTATION.md](./DOCUMENTATION.md) for detailed development guideli
 - Suitable for static file hosting (e.g., Netlify, GitHub Pages)
 - Ensure proper asset linking and cache headers
 
-
-
-
+## License
+KineticType Core and all associated documentation are the intellectual property of Sapience-IA. All rights reserved. For more details, see [KineticType-Core-Documentation.md](./KineticType-Core-Documentation.md).
